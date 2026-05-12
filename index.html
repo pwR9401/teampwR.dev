@@ -1,94 +1,97 @@
-<!doctype html>
-
-<!--
-  The Annoying Site
-  https://theannoyingsite.com
-
-  Author:
-    Feross Aboukhadijeh
-    https://feross.org
-
-  Patreon:
-    If you enjoyed this, please support me on Patreon!
-    https://www.patreon.com/feross
--->
-
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset='UTF-8'>
-  <meta name='theme-color' content='#fff' class='theme-color'/>
-  <style>
-    html, body {
-      width: 100%;
-      height: 100%;
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, 'avenir next', avenir,
-        'helvetica neue', helvetica, ubuntu, roboto, noto, 'segoe ui', arial,
-        sans-serif;
-      overflow: hidden;
-    }
-    .hello-message {
-      margin: 40px;
-      text-align: center;
-    }
-    .logout-messages {
-      pointer-events: none;
-      color: red;
-      margin: 40px;
-      position: fixed;
-      top: 0;
-      left: 0;
-      text-shadow: 2px 2px #FFF, 4px 4px 10px #000;
-    }
-    img {
-      width: 300px;
-    }
-    @keyframes blurslowly {
-      0% {
-        filter: none;
-      }
-      92% {
-        filter: blur(0);
-      }
-      96% {
-        filter: blur(1px);
-      }
-      100% {
-        filter: blur(0);
-      }
-    }
-    body {
-      animation-name: blurslowly;
-      animation-iteration-count: infinite;
-      animation-duration: 15s;
-      animation-play-state: running;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>teampwR.dev</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" href="//cdn.teampwr.dev/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<template>
-  <div class='hello-message'>
-    <h1>Hi there!</h1>
-    <h2>To get started, HOLD DOWN the space key for 3 seconds.</h2>
-    <h3>(or, on mobile, tap the cat!)</h3>
+    <header class="hero">
+        <div class="hero-content">
+            <img src="/logo_dark.png" alt="" class="main-logo">
+        </div>
+    </header>
 
-    <img src='/cat-cute.jpg' alt='Cute cat' />
-  </div>
-  <div class='logout-messages'></div>
-</template>
+    <nav id="navbar" class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="/logo_dark.png" alt="Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <!-- <li><a href="//docs.teampwr.dev">Documentation</a></li> -->
+            </ul>
+        </div>
+    </nav>
 
-<script src='/index.js'></script>
+    <main>
+        <!-- Project Grid -->
+        <section id="projects" class="section">
+            <div class="section-header">
+                <span class="label">Our Projects</span>
+            </div>
+            <div class="project-grid">
+                
+                <a href="//gamingreimagined2.teampwr.dev/apps/view/?id=2" target="_blank" class="project-card">
+                    <div class="card-content">
+                        <div class="card-top">
+                            <h3>pwRMessage</h3>
+                        </div>
+                        <p>Lightning fast messaging with privacy in mind.</p>
+                    </div>
+                </a>
 
-<script async src='https://www.googletagmanager.com/gtag/js?id=UA-3898076-24'></script>
-<script>
-  window.dataLayer = window.dataLayer || []
-  function gtag () {
-    window.dataLayer.push(arguments)
-  }
-  gtag('js', new Date())
-  gtag('config', 'UA-3898076-24')
-</script>
+                <a href="//gamingreimagined2.teampwr.dev" target="_blank" class="project-card">
+                    <div class="card-content">
+                        <div class="card-top">
+                            <h3>Gaming Reimagined 2</h3>
+                        </div>
+                        <p>Better unblocked games. Take a break from the stress of work or school, and relax.</p>
+                    </div>
+                </a>
 
+                <a href="//unixityyy.github.io/starlight" target="_blank" class="project-card">
+                    <div class="card-content">
+                        <div class="card-top">
+                            <h3>Starlight</h3>
+                        </div>
+                        <p>Contributers to the Starlight Sound Library</p>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+        <section id="contact" class="section contact-section">
+            <div class="contact-box">
+                <span class="label">Contact Us</span>
+                <h2>Have a question or want to collaborate?</h2>
+                <a href="mailto:general@support.teampwr.dev" class="email-link">general@support.teampwr.dev</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <span>teampwR.dev &copy; 2026</span>
+        </div>
+    </footer>
+
+    <script>
+        const nav = document.querySelector('#navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 40) {
+                nav.classList.add('visible');
+            } else {
+                nav.classList.remove('visible');
+            }
+        });
+    </script>
 </body>
 </html>
